@@ -1,6 +1,6 @@
 /**
 * this class describes the egg with color and contents
-* @author Adam James
+* @author Adam James, Najee Robinson, Anthony Hale
 * @version 3/8/21
 */
 
@@ -12,7 +12,7 @@ class Egg{
   private String eggContents;
 
   /* these set the egg colors and contents something random choosen by the methods below */
-  Egg () {
+  Egg() {
     eggColor = randomColor();
     eggContents = randomContents();
   }
@@ -21,22 +21,22 @@ class Egg{
   * this picks a random color from the array of 4 colors
   * @return the random egg color selected
   */
-  String randomColor() {
-    String colors[] = {"blue","pink","yellow","green"};
+  public String randomColor() {
+    String[] colors = {"blue","pink","yellow","green"};
     Random r = new Random();
-    String eggColor = (colors[r.nextInt(colors.length)]);
-    return eggColor;
+    int color = r.nextInt(4);
+    return colors[color];
   }
 
   /**
   * this picks random contents for the egg out of the array of contents 
   * @return the random egg contents selected
   */
-  String randomContents() {
+  public String randomContents() {
     String contents[] = {"Cadbury Egg", "Reese’s Egg", "pink Starburst", "yellow Peep", "25 cents", "50 cents", "one dollar"};
     Random r = new Random();
-    String eggContents = (contents[r.nextInt(contents.length)]);
-    return eggContents;
+    int content = r.nextInt(7);
+    return contents[content];
   }
 
   /**

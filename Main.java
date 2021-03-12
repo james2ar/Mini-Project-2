@@ -1,7 +1,8 @@
 /*
-Mini Project 2
-Group #2: Adam James, Anthony Hale, Najee Robinson
-Date: 3/12/21
+* Mini Project 2
+* Group #2: Adam James, Anthony Hale, Najee Robinson
+* Date: 3/12/21
+* This program is an egg hunt game where the user inputs the number of players and they randmly get assigned a number of eggs up to ten, where each egg contains a prize 
 */
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -120,6 +121,48 @@ class Main {
       System.out.println("Pink eggs: " + colors[1]);
       System.out.println("Yellow eggs: " + colors[2]);
       System.out.println("Green eggs: " + colors[3]);
+
+      int[] contents = new int[7]; //this new array holds a count of how many of each egg content were collected
+
+    /*
+    * this nested for loop runs through each players eggs and adds 1 to each corresponding egg content in the contents array for each egg they found of each egg contents
+    */
+    for(int i = 0; i < thePlayer.size(); i++) {
+      for(int k = 0; k < thePlayer.get(i).getNumEggs(); k++){
+          if (thePlayer.get(i).getBasket().get(k).getContents().equals("Cadbury Egg")) {
+          contents[0] = contents[0] + 1; //color "0" in the color array corresponds to blue
+          }
+          else if (thePlayer.get(i).getBasket().get(k).getContents().equals("Reese’s Egg")) {
+          contents[1] = contents[1] + 1; //color "1" in the color array corresponds to pink
+          }
+          else if (thePlayer.get(i).getBasket().get(k).getContents().equals("pink Starburst")) {
+          contents[2] = contents[2] + 1; //color "2" in the color array corresponds to yellow
+          }
+          else if (thePlayer.get(i).getBasket().get(k).getContents().equals("yellow Peep")) {
+          contents[3] = contents[3] + 1; //color "3" in the color array corresponds to green
+          }
+          else if (thePlayer.get(i).getBasket().get(k).getContents().equals("25 cents")) {
+          contents[4] = contents[4] + 1; //color "3" in the color array corresponds to green
+          }else if (thePlayer.get(i).getBasket().get(k).getContents().equals("50 cents")) {
+          contents[5] = contents[5] + 1; //color "3" in the color array corresponds to green
+          }else if (thePlayer.get(i).getBasket().get(k).getContents().equals("one dollar")) {
+          contents[6] = contents[6] + 1; //color "3" in the color array corresponds to green
+          }
+        }
+      }
+
+      /*
+      * these print statements give the totals for each egg's contents found which are stored in the contents array
+      */
+      System.out.println("\nTotal number of egg content found: ");
+      System.out.println("Cadbury Egg: " + contents[0]);
+      System.out.println("Reese’s Egg: " + contents[1]);
+      System.out.println("pink Starburst: " + contents[2]);
+      System.out.println("yellow Peep: " + contents[3]);
+      System.out.println("25 cents: " + contents[4]);
+      System.out.println("50 cents: " + contents[5]);
+      System.out.println("one dollar: " + contents[6]);
+
 
   }
 
